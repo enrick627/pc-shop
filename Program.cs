@@ -12,22 +12,39 @@ namespace pcshop
     {
         static void Main(string[] args)
         {//DECLARATIES
-            int aantalartikelen, prijs, tebetalen;
-            string artikel;
+            string input1, input2;
+            string Artikel, ArtikelGROTELETTERS;
+            int Stuks, eenheidsprijs;
+            int Totaleprijs;
 
             //input
-            Console.Write("welk artikel?: ");
-            artikel =  Console.ReadLine();
-            Console.Write("wat is de prijs?: ");
-            prijs = Convert.ToInt32(Console.ReadLine());
-            Console.Write("aantalartikelen = ");
-            aantalartikelen = Convert.ToInt16(Console.ReadLine());
-            
+            //vraag naar de gegevens
+            Console.Write("wat is de naam van het artikel?: ");
+            Artikel = Console.ReadLine();
+
+           
+
+            Console.Write("Hoeveel stuks?: ");
+            input1 = Console.ReadLine();
+            Stuks = Convert.ToInt16(input1);
+
+            Console.Write("Wat is de eenheidsprijs?: ");
+            input2 = Console.ReadLine();
+            eenheidsprijs = Convert.ToInt16(input2);
+
             //processing
-            tebetalen = (aantalartikelen * prijs);
+            Totaleprijs = eenheidsprijs * Stuks;
+            ArtikelGROTELETTERS = Artikel.ToUpper();
+
             //output
-            Console.WriteLine("Totaal te betalen = " + tebetalen.ToString());
+            Console.WriteLine(Stuks + " " + ArtikelGROTELETTERS);
+            Console.WriteLine("kostprijs " + " $ " + Totaleprijs.ToString());
             Console.ReadLine();
+
+            //wachten
+            Console.WriteLine();
+            Console.WriteLine("Druk op enter om af te sluiten: ");
+            Console.WriteLine();
         }
     }
 }
